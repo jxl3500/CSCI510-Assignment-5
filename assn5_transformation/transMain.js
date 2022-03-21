@@ -15,7 +15,7 @@
   var myCube_cone2 = null;
   var myCylinder_cone = null;
 
-  var mySphere = null;
+  var myCube2 = null;
   var myCube_sphere1 = null;
   var myCube_sphere2 = null;
   var myCylinder_sphere = null;
@@ -40,6 +40,7 @@ function createShapes() {
     myCube_cone2 = new Cube(3, 2, 0.5, 2, -3, -3);
     myCylinder_cone = new Cylinder(10, 5, -3, -1.5);
 
+    myCube2 = new Cube(3, 1, 1, 1, 3, 0.5);
     myCube_sphere1 = new Cube(3, 2, 0.5, 2, 3, -0.25);
     myCube_sphere2 = new Cube(3, 2, 0.5, 2, 3, -3);
     myCylinder_sphere = new Cylinder(10, 5, 3, -1.5);
@@ -54,6 +55,7 @@ function createShapes() {
     myCube_cone2.VAO = bindVAO(myCube_cone2);
     myCylinder_cone.VAO = bindVAO(myCylinder_cone);
 
+    myCube2.VAO = bindVAO(myCube2);
     myCube_sphere1.VAO = bindVAO(myCube_sphere1);
     myCube_sphere2.VAO = bindVAO(myCube_sphere2);
     myCylinder_sphere.VAO = bindVAO(myCylinder_sphere);
@@ -123,6 +125,9 @@ function drawShapes() {
 
     gl.bindVertexArray(myCylinder_cone.VAO);
     gl.drawElements(gl.TRIANGLES, myCylinder_cone.indices.length, gl.UNSIGNED_SHORT, 0);
+
+    gl.bindVertexArray(myCube2.VAO);
+    gl.drawElements(gl.TRIANGLES, myCube2.indices.length, gl.UNSIGNED_SHORT, 0);
 
     gl.bindVertexArray(myCube_sphere1.VAO);
     gl.drawElements(gl.TRIANGLES, myCube_sphere1.indices.length, gl.UNSIGNED_SHORT, 0);
